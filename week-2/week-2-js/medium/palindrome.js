@@ -4,7 +4,10 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  return str === str.split('').reverse().join('');
 }
+
+console.log(isPalindrome('naman'));
+
 
 module.exports = isPalindrome;
