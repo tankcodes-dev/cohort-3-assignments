@@ -5,7 +5,11 @@
 */
 
 function isAnagram(str1, str2) {
-
+	const reversed = str1.split('').reverse().join('')
+	return reversed === str2;
 }
+
+console.log(isAnagram("spar", "raps")); //true
+console.log(isAnagram("spar", "rpas")); //false
 
 module.exports = isAnagram;
