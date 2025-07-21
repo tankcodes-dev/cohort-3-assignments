@@ -44,7 +44,7 @@ function calculateTotalSpentByCategory(transactions){
 	for(const category in categoryTotals){
 		result.push({
 			category: category,
-			totalPrice: categoryTotals[category]
+			totalSpent: categoryTotals[category]
 		})
 	}
 	return result

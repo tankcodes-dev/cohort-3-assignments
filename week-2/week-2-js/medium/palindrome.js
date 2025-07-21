@@ -4,7 +4,7 @@
 */
 
 function isPalindrome(str) {
-  return str === str.split('').reverse().join('');
+  return str.toLowerCase().replace(/[!?,.\s]/g, '') === str.split('').reverse().join('').toLowerCase().replace(/[!?,.\s]/g, '');
 }
 
 console.log(isPalindrome('naman'));

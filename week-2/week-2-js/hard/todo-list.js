@@ -21,13 +21,19 @@ class Todo {
         this.todo = this.todo.filter((task) => task !== this.todo[indexOfTodo]);
     }
     update(index, task) {
-        this.todo[index] = task;
+        if (index >= 0 && index < this.todo.length) {
+            this.todo[index] = task;
+        }
     }
     getAll() {
         return this.todo;
     }
     get(indexOfTodo) {
-        return this.todo[indexOfTodo];
+        if (indexOfTodo >= 0 && indexOfTodo < this.todo.length) {
+            return this.todo[indexOfTodo];
+        }else{
+            return null
+        }
     }
     clear() {
         this.todo = [];
@@ -37,10 +43,10 @@ class Todo {
 const todo = new Todo();
 
 //add
-todo.add('Complete Week 3 assignment')
-todo.add('Complete Week 4 assignment')
-todo.add('Complete Week 5 assignment')
-todo.add('Complete Week 6 assignment')
+todo.add("Complete Week 3 assignment");
+todo.add("Complete Week 4 assignment");
+todo.add("Complete Week 5 assignment");
+todo.add("Complete Week 6 assignment");
 console.log(todo.getAll());
 
 //remove
@@ -48,14 +54,14 @@ todo.remove(1);
 console.log(todo.getAll());
 
 //update
-todo.update(2, 'Watch Cohort videos')
+todo.update(2, "Watch Cohort videos");
 console.log(todo.getAll());
 
 //get task
 console.log(todo.get(2));
 
 //clear todo
-todo.clear()
+todo.clear();
 console.log(todo.getAll());
 
 module.exports = Todo;
